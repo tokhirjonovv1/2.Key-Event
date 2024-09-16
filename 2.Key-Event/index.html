@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Event KeyCodes</title>
+</head>
+
+<body>
+
+  <div id="insert">
+    <div class="key" id="opened">
+      Press any key to get the keyCode
+    </div>
+    <div class="keys hidden">
+      <div class="key">
+        <span id="code"></span>
+        <small>Code</small>
+      </div>
+      <div class="key">
+        <span id="keyCode"></span>
+        <small>keyCode</small>
+      </div>
+      <div class="key">
+        <span id="key"></span>
+        <small>Key</small>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    
+    const opened = document.querySelector('#opened')
+    const keys = document.querySelector('.keys')
+    const code = document.getElementById('code')
+    const keyCode = document.getElementById('keyCode')
+    const key = document.getElementById('key')
+
+    document.addEventListener('keydown', (event) => {
+      keys.classList.remove('hidden')
+      opened.classList.add('hidden')
+      
+
+      code.textContent = event.code
+      keyCode.textContent = event.keyCode
+      key.textContent = event.key
+    })
+
+  </script>
+  
+</body>
+
+</html>
